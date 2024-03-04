@@ -13,14 +13,15 @@
  }
  
  .BannerCont::after {
-    content: "Chez vous, partout et ailleurs...";
+    content: "Chez vous, partout et ailleurs";
     z-index: 1;
     position: absolute;
     color: white;
-    font-size: 27px;
+    font-size: 26px;
     
     @media (max-width: 1001px) {
-       font-size: 18px;
+       font-size: 13px;
+
     }
  }
  
