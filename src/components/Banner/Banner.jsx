@@ -8,7 +8,6 @@ import BannerImageAbout from '../../assets/banner-about.png';
 import BannerImageHome from '../../assets/banner-home.png';
 
 function Banner(data) {
-   console.log('data = ', data);
    let isHomeBanner = false;
    if (data.data === 'Home') {
       isHomeBanner = true;
