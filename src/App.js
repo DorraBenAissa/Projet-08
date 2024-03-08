@@ -24,7 +24,7 @@ function App() {
 
   return (
     <>
-    <div className='contenair'>
+    <div className='container'>
 
       <Header />
 

@@ -9,8 +9,6 @@ import ArrowUp from '../../assets/arrow-up.png'
 
 function Collapse({ data }) {
   const [openIndexes, setOpenIndexes] = useState([])
-  console.log('openIndexes= ', openIndexes);
-  console.log('data = ', data);
   const toggleCollapse = (index) => {
     const currentIndex = openIndexes.indexOf(index)
     const newOpenIndexes = [...openIndexes]

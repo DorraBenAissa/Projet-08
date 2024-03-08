@@ -27,7 +27,6 @@ function Slider({ images }) {
          {images.length > 1  // Si il n'y a qu'une seul image, on n'affiche seulement l'image
          &&
          <> 
-            {/* // Affiche le compteur d'image */}
             <p className='CountSlider'>{currentIndex + 1} / {images.length}</p> 
             
             {/* // Affiche les fleches de navigation, au click on passe a l'image suivante ou precedente */}
