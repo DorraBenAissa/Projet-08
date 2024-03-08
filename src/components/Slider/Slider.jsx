@@ -1,6 +1,7 @@
 // IMPORTS
 import { useState } from 'react'
 import './slider.css'
+import PropTypes from 'prop-types'
 
 // ASSETS
 import ArrowRight from '../../assets/arrow-right.png';
@@ -42,5 +43,9 @@ function Slider({ images }) {
       </section>
    )
 }
+
+Slider.propTypes = {
+   images : PropTypes.string,
+ }
 
 export default Slider;

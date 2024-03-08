@@ -1,5 +1,6 @@
 // IMPORTS
 import './rating.css';
+import PropTypes from 'prop-types'
 
 // ASSETS
 import StarActive from '../../assets/star-active.png';
@@ -23,4 +24,9 @@ function Rating({ rating }) {
 
    return <div>{stars}</div>; // Retourne les etoiles
 }
+
+Rating.propTypes = {
+   rating : PropTypes.string,
+ }
+
 export default Rating;

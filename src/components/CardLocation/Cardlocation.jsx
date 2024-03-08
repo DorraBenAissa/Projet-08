@@ -2,29 +2,22 @@
 import { Link } from 'react-router-dom'
 import './CardLocation.css'
 import { useFetch } from '../../useFetch'
-
-// ASSETS
-// import DataLocation from '../../assets/logements.json'
-
-// let data = fetch('logements.json');
-// console.log('data = ', data)
-
-// const annonces = useFetch(window.location.origin + '/Kasa/annonces.json')
-
-// const DataLocation = fetchData(window.location.origin + '/logements.json');
-
-// console.log('DataLocation = ',DataLocation);
-//    async function fetchData(url) {
-//          const response = await fetch(url);
-//          const data = await response.json();
-//          return data;
-//    }
-   
+import LoadingScreen from '../../components/Loading/index';
+import Error from '../../pages/Error/Error';
 
 // Composant CardLocation > Génère des cards avec les images des locations, dynamiquement depuis le fichier JSON
 function CardLocation() {
    const DataLocation = useFetch(window.location.origin + '/logements.json');
-   console.log('DataLocation.fetchedData.map = ', DataLocation.fetchedData);
+
+   if (DataLocation.isLoading) {
+		return <LoadingScreen />
+	}
+
+	/* Checking if there is an error and if there is, it will display the Error component. */
+	if (DataLocation.error) {
+		return <Error />
+	}
+
    return (
       <section className='ContLocation'>
          {DataLocation.fetchedData && DataLocation.fetchedData.map((location) => (

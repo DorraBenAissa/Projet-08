@@ -1,6 +1,7 @@
 // IMPORTS
 import { useState } from 'react'
 import './Collapse.css'
+import PropTypes from 'prop-types'
 
 // ASSETS
 import ArrowDown from '../../assets/arrow-down.png'
@@ -45,6 +46,10 @@ function Collapse({ data }) {
       ))}
     </div>
   )
+}
+
+Collapse.propTypes = {
+  data : PropTypes.string,
 }
 
 export default Collapse

@@ -2,7 +2,7 @@
 import './home.css'
 
 // ASSETS
-import Banner from '../../assets/banner-home.png'
+import Banner from '../../components/Banner/Banner'
 
 // COMPONENTS
 import Cardlocation from '../../components/CardLocation/Cardlocation'
@@ -15,7 +15,7 @@ function Home() {
       <section>
          
          <div className='BannerCont'>
-            <img className='BannerImg' src={Banner} alt='Paysage' />
+            <Banner  data={"Home"}/>
          </div>
          
          <Cardlocation />
