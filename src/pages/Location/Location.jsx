@@ -48,11 +48,7 @@ function Logement() {
 	/* Checking if there is an error and if there is, it will display the Error component. */
 	if (DataLocation.error) {
 		return <Error />
-	}
-
-   if (!datas) { // Si l'id n'existe pas, affiche la page d'erreur
-      return (<Error />);
-   }else {
+	} else {
    return ( 
       <>
          {datas.pictures && <Slider images={datas.pictures} />}

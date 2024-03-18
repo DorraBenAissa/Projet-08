@@ -45,7 +45,7 @@ function Slider({ images }) {
 }
 
 Slider.propTypes = {
-   images : PropTypes.string,
+   images : PropTypes.arrayOf(PropTypes.string),
  }
 
 export default Slider;

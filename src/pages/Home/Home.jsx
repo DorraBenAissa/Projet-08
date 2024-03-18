@@ -3,6 +3,7 @@ import './home.css'
 
 // ASSETS
 import Banner from '../../components/Banner/Banner'
+import BannerImageHome from '../../assets/banner-home.png';
 
 // COMPONENTS
 import Cardlocation from '../../components/CardLocation/Cardlocation'
@@ -15,7 +16,7 @@ function Home() {
       <section>
          
          <div className='BannerCont'>
-            <Banner  data={"Home"}/>
+            <Banner  image={BannerImageHome}/>
          </div>
          
          <Cardlocation />

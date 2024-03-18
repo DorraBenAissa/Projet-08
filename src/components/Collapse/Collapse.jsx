@@ -7,8 +7,7 @@ import PropTypes from 'prop-types'
 import ArrowDown from '../../assets/arrow-down.png'
 import ArrowUp from '../../assets/arrow-up.png'
 
-
-function Collapse({ data }) {
+function Collapses({ data }) {
   const [openIndexes, setOpenIndexes] = useState([])
   const toggleCollapse = (index) => {
     const currentIndex = openIndexes.indexOf(index)
@@ -48,8 +47,8 @@ function Collapse({ data }) {
   )
 }
 
-Collapse.propTypes = {
-  data : PropTypes.string,
+Collapses.propTypes = {
+  data : PropTypes.arrayOf(PropTypes.string),
 }
 
-export default Collapse
+export default Collapses

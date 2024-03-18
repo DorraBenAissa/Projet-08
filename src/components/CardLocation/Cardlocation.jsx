@@ -20,7 +20,7 @@ function CardLocation() {
 
    return (
       <section className='ContLocation'>
-         {DataLocation.fetchedData && DataLocation.fetchedData.map((location) => (
+         {DataLocation.fetchedData.map((location) => (
             <Link to={`/location/${location.id}`} key={location.id}>
                <figure className='ContCard'>
                   <img className='ImgLocation' src={location.cover} alt={location.title} />
