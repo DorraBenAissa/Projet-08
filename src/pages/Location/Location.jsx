@@ -9,7 +9,7 @@ import LoadingScreen from '../../components/Loading/index';
 import Error from '../../pages/Error/Error';
 import Slider from '../../components/Slider/Slider';
 import Rating from '../../components/Rating/Rating';
-import Collapse from '../../components/Collapse/Collapse';
+import Collapses from '../../components/Collapse/Collapse';
 
 // Page Logement > Contient le Composant Slider, compo Rating et le composant Collapsedescription ainsi que les infos du logement et du propriétaire
 function Logement() {
@@ -22,23 +22,8 @@ function Logement() {
    if (DataLocation.fetchedData) {
       datas = DataLocation.fetchedData.find(location => location.id === id);
    }
-   // Crréer un JSON pour le passer en props au composant Collapse
-   let data;
-   if (datas){
-      data = [
-         {
-            title: 'Description',
-            text: datas.description
-         },
-         {
-            title: 'Equipements',
-            // Créer une liste avec les équipements
-            text: datas.equipments.map(equipment => (
-               <p className='TextCollapse' key={equipment}>{equipment}</p>
-            ))
-         }
-      ]
-   }
+   
+   
 
    /* Checking if the data is loading and if it is, it will display a loading screen. */
 	if (DataLocation.isLoading) {
@@ -48,7 +33,24 @@ function Logement() {
 	/* Checking if there is an error and if there is, it will display the Error component. */
 	if (DataLocation.error) {
 		return <Error />
-	} else {
+	}
+
+   // Crréer un JSON pour le passer en props au composant Collapse
+   let data;
+      data = [
+         {
+            title: 'Description',
+            text: datas.description
+         },
+         {
+            title: 'Equipements',
+            //Créer une liste avec les équipements
+            text: datas.equipments.map(equipment => (
+               <li className='TextCollapse' key={equipment}>{equipment}</li>
+            ))
+         }
+      ]
+
    return ( 
       <>
          {datas.pictures && <Slider images={datas.pictures} />}
@@ -76,11 +78,10 @@ function Logement() {
 
          </section>
 
-         <Collapse data={data}/>
+         <Collapses data={data}/>
 
       </>
   );
-                  }
 }
 
 

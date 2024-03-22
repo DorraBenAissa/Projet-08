@@ -13,7 +13,6 @@
  }
  
  .BannerCont::after {
-    content: "Chez vous, partout et ailleurs";
     z-index: 1;
     position: absolute;
     color: white;
@@ -41,3 +40,18 @@
        height: 150px;
     }
  }
+
+ .title {
+   color: white;
+   font-size: 18px;
+   position: relative;
+   width: 240px;
+
+   bottom: 395px;
+   left: 20px;
+   margin: 0;
+   @media (max-width: 1001px) {
+      bottom: 305px;
+   }
+}
+ 

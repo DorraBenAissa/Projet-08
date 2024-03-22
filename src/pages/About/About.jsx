@@ -17,7 +17,7 @@ function About() {
    return (
       <section>
          <Banner image = {BannerImageAbout}/>
-         <Collapses data={data}/>
+         <Collapses data= {data}/>
       </section>
    )
  }

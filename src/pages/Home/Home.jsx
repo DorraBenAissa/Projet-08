@@ -12,12 +12,12 @@ import Cardlocation from '../../components/CardLocation/Cardlocation'
 
 // Page d'acceuil > Contient une bannière et le composant Cardlocation
 function Home() {
+   const title = 'Chez vous, partout et ailleurs';
    return (
       <section>
-         
-         <div className='BannerCont'>
-            <Banner  image={BannerImageHome}/>
-         </div>
+
+            <Banner title={title} image={BannerImageHome}/>
+
          
          <Cardlocation />
 
