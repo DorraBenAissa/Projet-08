@@ -1,0 +1,57 @@
+// IMPORTS
+import { useState } from 'react'
+import './Collapse.css'
+import PropTypes from 'prop-types'
+
+// ASSETS
+import ArrowDown from '../../assets/arrow-down.png'
+import ArrowUp from '../../assets/arrow-up.png'
+
+function Collapses( {data} ) {
+  const [openIndexes, setOpenIndexes] = useState([])
+  const toggleCollapse = (index) => {
+    const currentIndex = openIndexes.indexOf(index)
+    const newOpenIndexes = [...openIndexes]
+
+    if (currentIndex === -1) {
+      newOpenIndexes.push(index)
+    } else {
+      newOpenIndexes.splice(currentIndex, 1)
+    }
+
+    setOpenIndexes(newOpenIndexes)
+  }
+
+  const numCollapses = data.length
+  const containerClass = numCollapses === 2 ? 'CollapseHomeTwo' : 'CollapseHome'
+
+  return (
+    <div className={containerClass}>
+      {data.map((collapse, index) => (
+        <div className="ContCollapse" key={index}>
+          <div className="TittleCont" onClick={() => toggleCollapse(index)}>
+            <h3 className='TittleCollapse'>{collapse.title}</h3>
+            {openIndexes.includes(index) ? (
+              <img src={ArrowUp} alt="Arrow" />
+            ) : (
+               <img src={ArrowDown} alt="Arrow" />
+            )}
+          </div>
+          
+          {openIndexes.includes(index) && (
+            <ul className="TextCollapse">{collapse.text}</ul>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+Collapses.propTypes = {
+  data : PropTypes.arrayOf(PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.string
+  }))
+}
+
+export default Collapses
